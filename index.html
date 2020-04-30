@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script type="text/javascript">
+    function putInRandomBlock() {
+      let input = document.getElementById("input").value;
+      let output = document.getElementById("output").querySelectorAll("p");
+      output[randomInteger(0, output.length-1)].innerHTML = input;
+    }
+    function randomInteger(min, max) {
+      let rand = min + Math.random() * (max + 1 - min);
+      return Math.floor(rand);
+    }
+  </script>
+</head>
+<body>
+  <div class="container" id="output">
+    <div class="row">
+      <div class="col-sm-4">
+        <p>One of three columns</p>
+      </div>
+      <div class="col-sm-4">
+        <p>One of three columns</p>
+      </div>
+      <div class="col-sm-4">
+        <p>One of three columns</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <p>One of two columns</p>
+      </div>
+      <div class="col-sm-3">
+        <p>One of two columns</p>
+      </div>
+    </div> 
+    <form>
+      <div class="form-group">
+        <label for="input">Input something</label>
+        <input class="form-control" placeholder="Yeah. Right there." id="input" >
+      </div>
+      <button type="button" onclick="putInRandomBlock()" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
